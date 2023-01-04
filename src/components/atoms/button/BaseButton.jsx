@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
+  display: inline-block;
   color: #fff;
   padding: 6px 24px;
   outline: none;
@@ -10,5 +11,8 @@ export const BaseButton = styled.button`
   &:hover {
     cursor: pointer;
     opacity: 0.8;
+  }
+  &:not(:first-of-type) {
+    margin-top: 4px;
   }
 `;

@@ -8,8 +8,12 @@ export const PrimaryButton = (props) => {
   return <SButton>{children}</SButton>;
 };
 
+// 差分だけ書く
 const SButton = styled(BaseButton)`
-     background-color: black;
+  background-color: black;
+  &:hover {
+    background-color: gray;
+  }
 `;
 
 // const SButton = styled.button`

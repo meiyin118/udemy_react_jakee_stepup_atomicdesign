@@ -8,6 +8,7 @@ export const Card = (props) => {
 const SCard = styled.div`
   padding: 16px;
   background-color: #fff;
-  box-shadow: #ddd 0 0 4px 4px;
+  box-shadow: #e9dac1 0 0 10px 2px;
   border-radius: 8px;
+  font-size: 14px;
 `;

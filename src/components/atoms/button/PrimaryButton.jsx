@@ -10,9 +10,9 @@ export const PrimaryButton = (props) => {
 
 // 差分だけ書く
 const SButton = styled(BaseButton)`
-  background-color: black;
+  background-color: #222;
   &:hover {
-    background-color: gray;
+    background-color: #54bab9;
   }
 `;
 

@@ -13,7 +13,7 @@ const SFooter = styled.footer`
   bottom: 0;
   width: 100%;
   padding: 8px;
-  background-color: #666;
+  background-color: #222;
   color: #fff;
   text-align: center;
 `;

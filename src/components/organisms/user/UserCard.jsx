@@ -6,15 +6,6 @@ export const UserCard = (props) => {
   return (
     <Card>
       <UserIconWithName image={user.image} name={user.name} />
-      {/* <UserIconWithName>
-        <img
-          src={user.image}
-          alt={`${user.name}のプロフィール写真`}
-          width={160}
-          height={160}
-        />
-        <p>{user.name}</p>
-      </UserIconWithName> */}
       <SDl>
         <dt>メール</dt>
         <dd>{user.email}</dd>

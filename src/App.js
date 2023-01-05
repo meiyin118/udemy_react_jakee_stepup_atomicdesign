@@ -1,13 +1,22 @@
-import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
-import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
+import { Router } from "./router/Router";
 import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <PrimaryButton>ボタン</PrimaryButton>
-      <br />
-      <SecondaryButton>ボタン</SecondaryButton>
-    </div>
+    <Router />
+    // <BrowserRouter>
+    //   <DefaultLayout>
+    //     <div className="App">
+    //       <PrimaryButton>ボタン</PrimaryButton>
+    //       <br />
+    //       <SecondaryButton>ボタン</SecondaryButton>
+    //       <br />
+    //       <br />
+    //       <SearchInput />
+    //       <br />
+    //       <UserCard user={user} />
+    //     </div>
+    //   </DefaultLayout>
+    // </BrowserRouter>
   );
 }

@@ -1,6 +1,14 @@
 import styled from "styled-components";
+
+// コンテキストの値を参照するには、useContext
+import React, { useContext } from "react";
+import { UserContext } from "../../../providers/userProvider";
+
 export const UserIconWithName = (props) => {
   const { image, name, isAdmin } = props;
+  // UserContextというコンテキストを呼ぶ
+  const context = useContext(UserContext);
+  console.log(context);
   return (
     <SIconImageSet>
       <SImage

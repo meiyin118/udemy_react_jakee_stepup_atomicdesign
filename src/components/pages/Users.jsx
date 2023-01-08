@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { SearchInput } from "../molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
+import { useLocation } from "react-router-dom";
 
 // User Cardに渡す情報
 const users = [...Array(6).keys()].map((val, index) => {
@@ -9,18 +10,23 @@ const users = [...Array(6).keys()].map((val, index) => {
     image: "https://source.unsplash.com/HlI03bNHhBI",
     name: `はる${index + 1}`,
     email: "example@examle.com",
-    tel: "090-XXXX-XXXX",
+    tel: "090-XXXX-XXXX"
   };
 });
 
 export const Users = () => {
+  // 前ページのstateを受け取り確認
+  const { state } = useLocation();
+  console.log(state);
+  const isAdmin = state ? state.isAdmin : false;
+
   return (
     <SContainer>
       <h2>Users</h2>
       <SearchInput />
       <SUserArea>
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} isAdmin={isAdmin} />
         ))}
       </SUserArea>
     </SContainer>

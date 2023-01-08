@@ -5,10 +5,15 @@ import React, { useContext } from "react";
 import { UserContext } from "../../../providers/userProvider";
 
 export const UserIconWithName = (props) => {
-  const { image, name, isAdmin } = props;
+  // const { image, name, isAdmin } = props;
   // UserContextというコンテキストを呼ぶ
-  const context = useContext(UserContext);
-  console.log(context);
+  // const context = useContext(UserContext);
+
+  // バケツリレー不要になった
+  const { image, name } = props;
+  const { userInfo } = useContext(UserContext);
+  console.log(userInfo);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SIconImageSet>
       <SImage

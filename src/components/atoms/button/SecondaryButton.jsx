@@ -7,8 +7,5 @@ export const SecondaryButton = (props) => {
 };
 
 const SButton = styled(BaseButton)`
-  background-color: red;
-  &:hover {
-    background-color: orange;
-  }
+  background-color: orange;
 `;

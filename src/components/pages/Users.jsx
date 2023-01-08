@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { SearchInput } from "../molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
 // import { useLocation } from "react-router-dom";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
+import { UserContext } from "../../providers/userProvider";
 
 // User Cardに渡す情報
 const users = [...Array(6).keys()].map((val, index) => {
@@ -20,10 +23,18 @@ export const Users = () => {
   // console.log(state);
   // const isAdmin = state ? state.isAdmin : false;
 
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const onClickSwitch = () => {
+    setUserInfo({ isAdmin: !userInfo });
+  };
+
   return (
     <SContainer>
       <h2>Users</h2>
       <SearchInput />
+      <SButton>
+        <SecondaryButton onClick={onClickSwitch}>切り替え</SecondaryButton>
+      </SButton>
       <SUserArea>
         {users.map((user) => (
           // <UserCard key={user.id} user={user} isAdmin={isAdmin} />
@@ -47,4 +58,8 @@ const SUserArea = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
+`;
+
+const SButton = styled.div`
+  margin-top: 8px;
 `;

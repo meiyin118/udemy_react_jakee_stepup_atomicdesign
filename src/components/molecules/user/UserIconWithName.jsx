@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
 // コンテキストの値を参照するには、useContext
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { UserContext } from "../../../providers/userProvider";
 
-export const UserIconWithName = (props) => {
+export const UserIconWithName = memo((props) => {
   // const { image, name, isAdmin } = props;
   // UserContextというコンテキストを呼ぶ
   // const context = useContext(UserContext);
-
+  console.log("UserIconWithName");
   // バケツリレー不要になった
   const { image, name } = props;
   const { userInfo } = useContext(UserContext);
-  console.log(userInfo);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
     <SIconImageSet>
@@ -26,7 +25,7 @@ export const UserIconWithName = (props) => {
       {isAdmin && <SEdit>編集</SEdit>}
     </SIconImageSet>
   );
-};
+});
 
 const SIconImageSet = styled.div`
   text-align: center;
